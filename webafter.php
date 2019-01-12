@@ -1,7 +1,12 @@
 <?php
-
+session_start();
+$link=mysqli_connect("localhost","root","","orgeve");
+if(isset($_POST['logout']))
+{
+  session_destroy();
+  header ('location:index.php');
+}
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,8 +21,6 @@
     <title>orgeve</title>
   </head>
   <style>
-
-
   .top {
   background : #343a40 ;
   border: none;
@@ -112,7 +115,7 @@
   height:350px;
 }
 
-.middle:hover {
+.container:hover .middle {
   opacity: 0.7;
   width:300px;
   height:450px;
@@ -129,7 +132,9 @@
   </style>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top" >
+
      <a class="navbar-brand" href="#" style="color:#fff ; background: #343a40">ORGEVE</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -147,16 +152,20 @@
           <a  href="#" style="text-decoration: none"> <button class="top">  Contact Us </button> </a>
         </li>
       </ul>
+      <form method="post" action="">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a  href="register.php" style="text-decoration: none"> <button class="top my-btn"><i class="fas fa-user-plus"></i>Sign Up </button></a>
+         <h2>Welcome User</h2>
         </li>
-         <li class="nav-item">
-          <a  href="login.php" style="text-decoration: none"><button class="top my-btn"><i class="fas fa-sign-in-alt"></i>Login</button></a>
-        </li>
+        <li class="nav-item">
+         <a  href="" style="text-decoration: none"><button class="top my-btn" name ="logout"><i class="fas fa-sign-in-alt"></i>LogOut</button></a>
+       </li>
+
       </ul>
+      </form>
 
     </div>
+
   </nav>
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 
@@ -225,23 +234,8 @@
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button>
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <h3> Please Sign Up first.</h3>
-      </div>
+      <a  href="registration.php" style="text-decoration: none"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button></a>
 
-    </div>
-  </div>
-</div>
     </div>
   </div>
       </div>
@@ -254,23 +248,8 @@
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button>
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Please Sign Up first.
-      </div>
+    <a  href="registration.php" style="text-decoration: none">  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button> </a>
 
-    </div>
-  </div>
-</div>
     </div>
   </div>
       </div>
@@ -283,23 +262,8 @@
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button>
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Please Sign Up first.
-      </div>
+      <a  href="registration.php" style="text-decoration: none"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button> </a>
 
-    </div>
-  </div>
-</div>
     </div>
   </div>
       </div>
@@ -319,23 +283,8 @@
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button>
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Please Sign Up first.
-      </div>
+    <a  href="registration.php" style="text-decoration: none">  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button></a>
 
-    </div>
-  </div>
-</div>
     </div>
   </div>
       </div>
@@ -348,23 +297,8 @@
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button>
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Please Sign Up first.
-      </div>
+    <a  href="registration.php" style="text-decoration: none">  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Register </button></a>
 
-    </div>
-  </div>
-</div>
     </div>
   </div>
       </div>
@@ -431,7 +365,7 @@
 
   <script type="text/javascript">
     function scrollWin() {
-    window.scrollTo(0, 640);
+    window.scrollTo(0, 620);
 }
   </script>
 
